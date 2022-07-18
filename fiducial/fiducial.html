@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="build/artoolkit.debug.js"></script>
+        <script src="build/artoolkit.min.js"></script>
+        <script src="js/artoolkit.api.js"></script>
+        <script>
+var video = ARController.getUserMedia({
+	maxARVideoSize: 320, // do AR processing on scaled down video of this size
+	facing: "environment",
+	onSuccess: function(video) {
+		console.log('got video', video);
+	}
+});
+
+var arController = new ARController(video, 'camera_para-iPhone 5 rear 640x480 1.0m');
+arController.onload = function() {
+	console.log('ARController ready for use', arController);
+};
+        </script>
+    </head>
+    <body>
+        jsartoolkit
+    </body>
+</html>
